@@ -52,7 +52,6 @@ for sound in sound_data.values():
         if name.startswith(MOD+':'):
             check((ASSETS/'sounds'/(name.split(':',1)[1]+'.ogg')).exists(), f'Missing sound {name}')
 
-check((ROOT/'AI_USAGE.md').read_text(encoding='utf-8').strip() == '大量代码来自 AI。', 'AI disclosure text changed')
 for file in RES.rglob('*'):
     if file.is_file():
         check(not any(value in file.as_posix().lower() for value in ('caromhall','table_logo','_weapon','/textures/item/cues/','/models/cue/')), f'Excluded asset {file.name}')

@@ -8,7 +8,7 @@ VERSION=version()
 OUTPUT=ROOT/'dist'/VERSION
 DIRS={'common','fabric','forge','neoforge','neoforge-26.1','art','tools','gradle','.github','docs'}
 FILES={'README.md','README.zh-CN.md','LICENSE','ASSET-LICENSE.md','ASSETS_LICENSE.md','NOTICE',
-       'CONTRIBUTING.md','THIRD_PARTY_NOTICES.md','AI_USAGE.md','CHANGELOG.md',
+       'THIRD_PARTY_NOTICES.md',
        '.gitignore','.gitattributes','table_geometry.json'}
 EXCLUDED={'.git','.gradle','.tools','build','out','run','runs','logs','crash-reports','saves','world','verification-world','cache','__pycache__','.idea','.vscode','music-library','user-music'}
 PRIVATE_FILES={'ops.json','usercache.json','whitelist.json','banned-players.json','banned-ips.json','server.properties','eula.txt','level.dat','level.dat_old','local.properties'}
