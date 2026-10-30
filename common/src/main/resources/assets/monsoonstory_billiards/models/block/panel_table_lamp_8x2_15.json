@@ -1,0 +1,381 @@
+{
+  "textures": {
+    "black": "monsoonstory_billiards:room/black",
+    "lamp_wood": "monsoonstory_billiards:room/lamp_wood",
+    "lamp_cream": "monsoonstory_billiards:room/lamp_cream",
+    "lamp_brass": "monsoonstory_billiards:room/lamp_brass",
+    "lamp_banner": "monsoonstory_billiards:room/lamp_banner",
+    "lamp_title": "monsoonstory_billiards:room/lamp_title",
+    "particle": "monsoonstory_billiards:room/black"
+  },
+  "elements": [
+    {
+      "name": "Inset housing right",
+      "from": [
+        0,
+        7,
+        0
+      ],
+      "to": [
+        14,
+        8,
+        14
+      ],
+      "faces": {
+        "east": {
+          "uv": [
+            0.0,
+            0.0,
+            8.0,
+            16.0
+          ],
+          "texture": "#black"
+        },
+        "south": {
+          "uv": [
+            12.327868852459016,
+            0.0,
+            16.0,
+            16.0
+          ],
+          "texture": "#black"
+        },
+        "up": {
+          "uv": [
+            12.327868852459016,
+            8.0,
+            16.0,
+            16.0
+          ],
+          "texture": "#black"
+        },
+        "down": {
+          "uv": [
+            12.327868852459016,
+            8.0,
+            16.0,
+            16.0
+          ],
+          "texture": "#black"
+        }
+      }
+    },
+    {
+      "name": "Rear walnut frame",
+      "from": [
+        0,
+        3.2,
+        14
+      ],
+      "to": [
+        16,
+        8,
+        15.8
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            0.0,
+            0.0,
+            2.0,
+            16.0
+          ],
+          "texture": "#lamp_wood"
+        },
+        "east": {
+          "uv": [
+            0.0,
+            0.0,
+            16.0,
+            16.0
+          ],
+          "texture": "#lamp_wood"
+        },
+        "south": {
+          "uv": [
+            14.0,
+            0.0,
+            16.0,
+            16.0
+          ],
+          "texture": "#lamp_wood"
+        },
+        "up": {
+          "uv": [
+            14.0,
+            0.0,
+            16.0,
+            16.0
+          ],
+          "texture": "#lamp_wood"
+        },
+        "down": {
+          "uv": [
+            14.0,
+            0.0,
+            16.0,
+            16.0
+          ],
+          "texture": "#lamp_wood"
+        }
+      }
+    },
+    {
+      "name": "Right walnut frame",
+      "from": [
+        14,
+        3.2,
+        0
+      ],
+      "to": [
+        16,
+        8,
+        14
+      ],
+      "faces": {
+        "east": {
+          "uv": [
+            0.0,
+            0.0,
+            8.0,
+            16.0
+          ],
+          "texture": "#lamp_wood"
+        },
+        "south": {
+          "uv": [
+            0.0,
+            0.0,
+            16.0,
+            16.0
+          ],
+          "texture": "#lamp_wood"
+        },
+        "west": {
+          "uv": [
+            8.0,
+            0.0,
+            16.0,
+            16.0
+          ],
+          "texture": "#lamp_wood"
+        },
+        "up": {
+          "uv": [
+            0.0,
+            8.0,
+            16.0,
+            16.0
+          ],
+          "texture": "#lamp_wood"
+        },
+        "down": {
+          "uv": [
+            0.0,
+            8.0,
+            16.0,
+            16.0
+          ],
+          "texture": "#lamp_wood"
+        }
+      }
+    },
+    {
+      "name": "Warm diffuser right",
+      "from": [
+        0,
+        3.3,
+        0
+      ],
+      "to": [
+        14,
+        4,
+        14
+      ],
+      "faces": {
+        "east": {
+          "uv": [
+            0.0,
+            0.0,
+            8.0,
+            16.0
+          ],
+          "texture": "#lamp_cream"
+        },
+        "south": {
+          "uv": [
+            12.327868852459016,
+            0.0,
+            16.0,
+            16.0
+          ],
+          "texture": "#lamp_cream"
+        },
+        "up": {
+          "uv": [
+            12.327868852459016,
+            8.0,
+            16.0,
+            16.0
+          ],
+          "texture": "#lamp_cream"
+        },
+        "down": {
+          "uv": [
+            12.327868852459016,
+            8.0,
+            16.0,
+            16.0
+          ],
+          "texture": "#lamp_cream"
+        }
+      },
+      "shade": false
+    },
+    {
+      "name": "Rear brass lip",
+      "from": [
+        0,
+        2.8,
+        14
+      ],
+      "to": [
+        16,
+        3.2,
+        16
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            0.0,
+            0.0,
+            2.0,
+            16.0
+          ],
+          "texture": "#lamp_brass"
+        },
+        "east": {
+          "uv": [
+            0.0,
+            0.0,
+            16.0,
+            16.0
+          ],
+          "texture": "#lamp_brass"
+        },
+        "south": {
+          "uv": [
+            14.0,
+            0.0,
+            16.0,
+            16.0
+          ],
+          "texture": "#lamp_brass"
+        },
+        "up": {
+          "uv": [
+            14.0,
+            0.0,
+            16.0,
+            16.0
+          ],
+          "texture": "#lamp_brass"
+        },
+        "down": {
+          "uv": [
+            14.0,
+            0.0,
+            16.0,
+            16.0
+          ],
+          "texture": "#lamp_brass"
+        }
+      }
+    },
+    {
+      "name": "Right brass lip",
+      "from": [
+        14,
+        2.8,
+        0
+      ],
+      "to": [
+        16,
+        3.2,
+        14
+      ],
+      "faces": {
+        "east": {
+          "uv": [
+            0.0,
+            0.0,
+            8.0,
+            16.0
+          ],
+          "texture": "#lamp_brass"
+        },
+        "south": {
+          "uv": [
+            0.0,
+            0.0,
+            16.0,
+            16.0
+          ],
+          "texture": "#lamp_brass"
+        },
+        "west": {
+          "uv": [
+            8.0,
+            0.0,
+            16.0,
+            16.0
+          ],
+          "texture": "#lamp_brass"
+        },
+        "up": {
+          "uv": [
+            0.0,
+            8.0,
+            16.0,
+            16.0
+          ],
+          "texture": "#lamp_brass"
+        },
+        "down": {
+          "uv": [
+            0.0,
+            8.0,
+            16.0,
+            16.0
+          ],
+          "texture": "#lamp_brass"
+        }
+      }
+    },
+    {
+      "name": "Rear title band",
+      "from": [
+        0,
+        3.5,
+        15.879999999999999
+      ],
+      "to": [
+        14,
+        7.5,
+        15.899999999999999
+      ],
+      "faces": {
+        "south": {
+          "uv": [
+            14.193548387096774,
+            0.0,
+            16.0,
+            16.0
+          ],
+          "texture": "#lamp_banner"
+        }
+      },
+      "shade": false
+    }
+  ]
+}

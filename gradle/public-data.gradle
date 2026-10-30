@@ -1,0 +1,45 @@
+import groovy.json.JsonSlurper
+import groovy.json.JsonOutput
+
+// Game data uses different directory names and item-stack codecs in 1.21.1.
+def sharedResources = file('../common/src/main/resources')
+def sharedData = new File(sharedResources, 'data')
+def publicDataDir = layout.buildDirectory.dir('generated/public-data')
+tasks.register('preparePublicData') {
+    inputs.dir(sharedResources)
+    inputs.property('gameDataVersion', '1.21.1')
+    outputs.dir(publicDataDir)
+    doLast {
+        def destination = publicDataDir.get().asFile
+        if (!destination.toPath().toAbsolutePath().normalize().startsWith(layout.buildDirectory.get().asFile.toPath().toAbsolutePath().normalize())) {
+            throw new GradleException('Generated data must stay inside the build directory')
+        }
+        delete(destination)
+        copy {
+            from(sharedResources)
+            into(destination)
+            exclude('data/**')
+        }
+        fileTree(destination).matching { include 'assets/*/models/block/panel_table_lamp*.json' }.each { model ->
+            def value = new JsonSlurper().parse(model)
+            value.render_type = 'minecraft:cutout'
+            model.setText(JsonOutput.prettyPrint(JsonOutput.toJson(value)) + '\n', 'UTF-8')
+        }
+        fileTree(sharedData).matching { include '**/*.json' }.each { input ->
+            def path = sharedData.toPath().relativize(input.toPath()).toString().replace('\\', '/')
+            def converted = path.replace('/recipes/', '/recipe/').replace('/advancements/', '/advancement/').replace('/loot_tables/', '/loot_table/').replace('/tags/blocks/', '/tags/block/').replace('/tags/items/', '/tags/item/')
+            def value = new JsonSlurper().parse(input)
+            if (path.contains('/recipes/') && value.result instanceof Map && value.result.item) {
+                value.result.id = value.result.remove('item')
+            }
+            if (path.contains('/advancements/') && value.display?.icon?.item) {
+                value.display.icon.id = value.display.icon.remove('item')
+            }
+            def output = new File(destination, 'data/' + converted)
+            output.parentFile.mkdirs()
+            output.setText(JsonOutput.prettyPrint(JsonOutput.toJson(value)) + '\n', 'UTF-8')
+        }
+    }
+}
+sourceSets.main.resources.srcDir(publicDataDir)
+tasks.named('processResources') { dependsOn('preparePublicData') }

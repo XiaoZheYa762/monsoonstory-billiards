@@ -1,0 +1,78 @@
+plugins { id 'fabric-loom' version '1.9.2' }
+version = project.mod_version
+group = 'dev.monsoonstory'
+base { archivesName = 'monsoonstory_billiards-fabric-1.20.1' }
+apply from: '../gradle/licenses.gradle'
+repositories { mavenCentral() }
+dependencies {
+    minecraft 'com.mojang:minecraft:1.20.1'
+    mappings 'net.fabricmc:yarn:1.20.1+build.10:v2'
+    modImplementation 'net.fabricmc:fabric-loader:0.16.9'
+    modImplementation 'net.fabricmc.fabric-api:fabric-api:0.92.2+1.20.1'
+}
+java { sourceCompatibility = JavaVersion.VERSION_17; targetCompatibility = JavaVersion.VERSION_17; withSourcesJar() }
+tasks.withType(JavaCompile).configureEach { options.release = 17; options.encoding = 'UTF-8' }
+processResources { inputs.property 'version', project.version; filesMatching('fabric.mod.json') { expand version: project.version }; filteringCharset = 'UTF-8' }
+sourceSets { verification { compileClasspath += main.compileClasspath + main.output; runtimeClasspath += main.runtimeClasspath + main.output } }
+sourceSets.main.java.srcDir('../common/src/main/java')
+sourceSets.main.resources.srcDir('../common/src/main/resources')
+tasks.register('verifyLogic', JavaExec) { dependsOn verificationClasses; classpath = sourceSets.verification.runtimeClasspath; mainClass = 'dev.monsoonstory.billiards.LogicVerification' }
+tasks.register('verifyPrediction', JavaExec) { dependsOn verificationClasses; classpath = sourceSets.verification.runtimeClasspath; mainClass = 'dev.monsoonstory.billiards.PredictionLogic' }
+tasks.register('verifyPower', JavaExec) { dependsOn verificationClasses; classpath = sourceSets.verification.runtimeClasspath; mainClass = 'dev.monsoonstory.billiards.PowerLogic' }
+// Runs only the native Vorbis decoder; no window, sound device or Minecraft instance.
+tasks.register('verifyVorbis', JavaExec) {
+    dependsOn verificationClasses
+    classpath = sourceSets.verification.runtimeClasspath
+    mainClass = 'dev.monsoonstory.billiards.MusicDecoderVerification'
+    args file('../common/src/main/resources/assets/monsoonstory_billiards/sounds/rack.ogg').absolutePath
+    systemProperty 'java.awt.headless', 'true'
+}
+tasks.register('verifyPublicSafety') {
+    dependsOn 'runServerTest'
+    doLast {
+        def report=file('build/public-safety-report.json')
+        if(!report.exists()||!new groovy.json.JsonSlurper().parse(report).passed)
+            throw new GradleException('Public safety server verification did not pass')
+    }
+}
+loom {
+    mods {
+        monsoonstory_billiards { sourceSet sourceSets.main }
+        billiards_verification { sourceSet sourceSets.verification }
+    }
+    runs {
+        serverTest { server(); source sourceSets.verification; vmArg '-Dfabric-api.gametest'; runDir 'run/server-tests' }
+        clientTest { client(); source sourceSets.verification; vmArg '-Dbilliards.clientTest=true'; runDir 'run/client-tests' }
+    }
+}
+tasks.named('runServerTest') {
+    doFirst { file('build/public-safety-report.json').delete() }
+}
+tasks.register('verificationJar', Jar) { dependsOn verificationClasses; archiveClassifier = 'verification-dev'; from sourceSets.verification.output }
+tasks.register('remapVerificationJar', net.fabricmc.loom.task.RemapJarTask) { dependsOn verificationJar; inputFile = tasks.verificationJar.archiveFile; classpath.from(sourceSets.main.output); archiveClassifier = 'verification'; addNestedDependencies = false }
+tasks.register('exportVerificationClasspath') { doLast { file('build/verification-classpath.json').text = groovy.json.JsonOutput.toJson([libraries: configurations.runtimeClasspath.files.collect { it.absolutePath }, gradleHome: gradle.gradleUserHomeDir.absolutePath]) } }
+
+tasks.register('verifyGeometry') {
+    inputs.file('../table_geometry.json')
+    inputs.file('../common/src/main/java/dev/monsoonstory/billiards/core/Geometry.java')
+    inputs.dir('../common/src/main/resources/assets/monsoonstory_billiards/models/block')
+    doLast {
+        def spec = new groovy.json.JsonSlurper().parse(file('../table_geometry.json'))
+        def generated = file('../common/src/main/java/dev/monsoonstory/billiards/core/Geometry.java').text
+        if (!generated.contains("LENGTH=${spec.length}, WIDTH=${spec.width}")) throw new GradleException('Regenerate geometry with tools/generate_assets.py')
+        [SURFACE:'surface',R:'ball_radius',INSET:'rail_inset',POCKET_R:'pocket_radius',JAW_R:'jaw_radius',CORNER_MOUTH:'corner_mouth',SIDE_MOUTH:'side_mouth',POCKET_SETBACK:'pocket_setback'].each { constant, key ->
+            if (!generated.contains("${constant}=${spec[key]}")) throw new GradleException('Stale generated geometry: '+constant)
+        }
+        def models = fileTree('../common/src/main/resources/assets/monsoonstory_billiards/models/block') { include 'table_*_*.json' }
+        if (models.files.size() != spec.length * spec.width) throw new GradleException('Incorrect table model count')
+        models.each { model -> if (new groovy.json.JsonSlurper().parse(model).textures.felt != 'monsoonstory_billiards:block/felt') throw new GradleException('Wrong felt texture') }
+        def variants = new groovy.json.JsonSlurper().parse(file('../common/src/main/resources/assets/monsoonstory_billiards/blockstates/table_part.json')).variants
+        if (variants.size() != spec.length * spec.width * 4 * 3) throw new GradleException('Missing table style rotations')
+    }
+}
+tasks.named('processResources') { dependsOn 'verifyGeometry' }
+tasks.named('remapJar') { doLast { new java.util.zip.ZipFile(archiveFile.get().asFile).withCloseable { zip ->
+    ['fabric.mod.json','dev/monsoonstory/billiards/BilliardsMod.class','dev/monsoonstory/billiards/client/BilliardsClient.class','assets/monsoonstory_billiards/lang/zh_cn.json'].each {
+        if (zip.getEntry(it) == null) throw new GradleException('Missing release entry: '+it)
+    }
+} } }

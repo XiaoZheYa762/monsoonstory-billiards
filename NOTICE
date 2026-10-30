@@ -1,0 +1,33 @@
+Monsoon Story: Billiards / 季风物语：桌球
+Mod ID: monsoonstory_billiards
+Copyright (c) 2026 季风物语 (Monsoon Story / Jeefeng Story)
+
+Licensing transition prepared on 2026-10-30, beginning with release 1.1.1:
+
+- Original software source, build scripts, tools and documentation:
+  Jeefeng Source License Version 1.0 (LICENSE).
+- Original artwork and creative assets: Jeefeng Story Asset License
+  (ASSET-LICENSE.md), with all rights reserved except the stated permission.
+- Third-party materials retain their existing licenses. In particular, the
+  recordings and derived sounds identified in THIRD_PARTY_NOTICES.md remain
+  CC0 1.0. Gradle Wrapper material retains its separate notices and licenses
+  under gradle/LICENSE-GRADLE.txt and gradle/NOTICE-GRADLE.txt.
+
+The local 1.0.0 and 1.1.0 artifacts contain MIT notices for original code and
+assets. Whether those copies were publicly distributed is not established
+by this repository. If a copy was already distributed under MIT, changing
+these files does not revoke the permissions granted in that copy. Do not
+overwrite or relabel older artifacts as though they originally carried the
+new terms. Contributions and third-party material may be relicensed only
+with the necessary rights or authorization.
+
+The custom license restricts commercial use and is source-available; it is
+not an OSI-approved open-source license or GPL with an added restriction.
+Repository visibility does not grant rights beyond the applicable licenses.
+
+Minecraft is a separate product. This project is not an official Minecraft
+product and is not approved by or associated with Mojang or Microsoft.
+
+Commercial and asset permission requests: contact the copyright holder via
+the official project repository's Issues page. A request is not a license;
+obtain and retain an explicit written grant.

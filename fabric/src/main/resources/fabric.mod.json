@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "monsoonstory_billiards",
+  "version": "${version}",
+  "name": "Monsoon Story: Billiards",
+  "description": "Play eight-ball and nine-ball pool in your world, with multiplayer rooms and administrator-uploaded music.",
+  "authors": [
+    "季风物语"
+  ],
+  "license": "Jeefeng Source License v1.0; original assets separately licensed",
+  "contact": {
+    "homepage": "https://github.com/XiaoZheYa762/monsoonstory-billiards",
+    "sources": "https://github.com/XiaoZheYa762/monsoonstory-billiards",
+    "issues": "https://github.com/XiaoZheYa762/monsoonstory-billiards/issues"
+  },
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "dev.monsoonstory.billiards.BilliardsMod"
+    ],
+    "client": [
+      "dev.monsoonstory.billiards.client.BilliardsClient"
+    ]
+  },
+  "mixins": [
+    "monsoonstory_billiards.client.mixins.json",
+    "monsoonstory_billiards.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.16.9",
+    "minecraft": "1.20.1",
+    "java": ">=17",
+    "fabric-api": "*"
+  }
+}

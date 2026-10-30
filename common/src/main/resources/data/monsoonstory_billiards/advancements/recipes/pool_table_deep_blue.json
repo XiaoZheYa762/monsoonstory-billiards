@@ -1,0 +1,47 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "minecraft_blue_carpet": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:blue_carpet"
+            ]
+          }
+        ]
+      }
+    },
+    "minecraft_iron_ingot": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:iron_ingot"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "monsoonstory_billiards:pool_table_deep_blue"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "minecraft_blue_carpet",
+      "minecraft_iron_ingot",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "monsoonstory_billiards:pool_table_deep_blue"
+    ]
+  }
+}

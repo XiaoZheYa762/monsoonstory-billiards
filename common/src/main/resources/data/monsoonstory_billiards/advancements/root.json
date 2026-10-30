@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "item": "monsoonstory_billiards:cue"
+    },
+    "title": {
+      "text": "季风物语桌球 · 初入球房"
+    },
+    "description": {
+      "translate": "advancement.monsoonstory_billiards.root.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false,
+    "background": "monsoonstory_billiards:textures/block/felt.png"
+  },
+  "criteria": {
+    "done": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "done"
+    ]
+  ]
+}

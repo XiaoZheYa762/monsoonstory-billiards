@@ -1,0 +1,327 @@
+{
+  "textures": {
+    "black": "monsoonstory_billiards:room/black",
+    "lamp_wood_pink": "monsoonstory_billiards:room/lamp_wood_pink",
+    "lamp_cream": "monsoonstory_billiards:room/lamp_cream",
+    "lamp_brass": "monsoonstory_billiards:room/lamp_brass",
+    "lamp_banner_pink": "monsoonstory_billiards:room/lamp_banner_pink",
+    "lamp_title": "monsoonstory_billiards:room/lamp_title",
+    "particle": "monsoonstory_billiards:room/black"
+  },
+  "elements": [
+    {
+      "name": "Inset housing right",
+      "from": [
+        0,
+        7,
+        2
+      ],
+      "to": [
+        16,
+        8,
+        16
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            7.868852459016393,
+            0.0,
+            12.065573770491802,
+            16.0
+          ],
+          "texture": "#black"
+        },
+        "up": {
+          "uv": [
+            3.9344262295081966,
+            0.0,
+            8.131147540983607,
+            8.0
+          ],
+          "texture": "#black"
+        },
+        "down": {
+          "uv": [
+            3.9344262295081966,
+            0.0,
+            8.131147540983607,
+            8.0
+          ],
+          "texture": "#black"
+        }
+      }
+    },
+    {
+      "name": "Hanger right",
+      "from": [
+        14,
+        8,
+        15
+      ],
+      "to": [
+        16,
+        12,
+        16
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            0.0,
+            0.0,
+            16.0,
+            16.0
+          ],
+          "texture": "#black"
+        },
+        "east": {
+          "uv": [
+            8.0,
+            0.0,
+            16.0,
+            16.0
+          ],
+          "texture": "#black"
+        },
+        "west": {
+          "uv": [
+            0.0,
+            0.0,
+            8.0,
+            16.0
+          ],
+          "texture": "#black"
+        },
+        "up": {
+          "uv": [
+            0.0,
+            0.0,
+            16.0,
+            8.0
+          ],
+          "texture": "#black"
+        },
+        "down": {
+          "uv": [
+            0.0,
+            0.0,
+            16.0,
+            8.0
+          ],
+          "texture": "#black"
+        }
+      }
+    },
+    {
+      "name": "Balanced suspension beam",
+      "from": [
+        0,
+        12,
+        15
+      ],
+      "to": [
+        16,
+        14,
+        16
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            0.235294117647058,
+            0.0,
+            4.0,
+            16.0
+          ],
+          "texture": "#black"
+        },
+        "up": {
+          "uv": [
+            12.0,
+            0.0,
+            15.764705882352942,
+            8.0
+          ],
+          "texture": "#black"
+        },
+        "down": {
+          "uv": [
+            12.0,
+            0.0,
+            15.764705882352942,
+            8.0
+          ],
+          "texture": "#black"
+        }
+      }
+    },
+    {
+      "name": "Front walnut frame",
+      "from": [
+        0,
+        3.2,
+        0.2
+      ],
+      "to": [
+        16,
+        8,
+        2
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            4.0,
+            0.0,
+            6.0,
+            16.0
+          ],
+          "texture": "#lamp_wood_pink"
+        },
+        "south": {
+          "uv": [
+            10.0,
+            0.0,
+            12.0,
+            16.0
+          ],
+          "texture": "#lamp_wood_pink"
+        },
+        "up": {
+          "uv": [
+            10.0,
+            0.0,
+            12.0,
+            16.0
+          ],
+          "texture": "#lamp_wood_pink"
+        },
+        "down": {
+          "uv": [
+            10.0,
+            0.0,
+            12.0,
+            16.0
+          ],
+          "texture": "#lamp_wood_pink"
+        }
+      }
+    },
+    {
+      "name": "Warm diffuser right",
+      "from": [
+        0,
+        3.3,
+        2
+      ],
+      "to": [
+        16,
+        4,
+        16
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            7.868852459016393,
+            0.0,
+            12.065573770491802,
+            16.0
+          ],
+          "texture": "#lamp_cream"
+        },
+        "up": {
+          "uv": [
+            3.9344262295081966,
+            0.0,
+            8.131147540983607,
+            8.0
+          ],
+          "texture": "#lamp_cream"
+        },
+        "down": {
+          "uv": [
+            3.9344262295081966,
+            0.0,
+            8.131147540983607,
+            8.0
+          ],
+          "texture": "#lamp_cream"
+        }
+      },
+      "shade": false
+    },
+    {
+      "name": "Front brass lip",
+      "from": [
+        0,
+        2.8,
+        0
+      ],
+      "to": [
+        16,
+        3.2,
+        2
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            4.0,
+            0.0,
+            6.0,
+            16.0
+          ],
+          "texture": "#lamp_brass"
+        },
+        "south": {
+          "uv": [
+            10.0,
+            0.0,
+            12.0,
+            16.0
+          ],
+          "texture": "#lamp_brass"
+        },
+        "up": {
+          "uv": [
+            10.0,
+            0.0,
+            12.0,
+            16.0
+          ],
+          "texture": "#lamp_brass"
+        },
+        "down": {
+          "uv": [
+            10.0,
+            0.0,
+            12.0,
+            16.0
+          ],
+          "texture": "#lamp_brass"
+        }
+      }
+    },
+    {
+      "name": "Front title band",
+      "from": [
+        0,
+        3.5,
+        0.1
+      ],
+      "to": [
+        16,
+        7.5,
+        0.12
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            3.870967741935484,
+            0.0,
+            5.935483870967742,
+            16.0
+          ],
+          "texture": "#lamp_banner_pink"
+        }
+      },
+      "shade": false
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+plugins {
+    id 'java-library'
+    id 'net.neoforged.moddev.legacyforge' version '2.0.148'
+}
+version = project.mod_version
+group = 'dev.monsoonstory.billiards'
+base { archivesName = 'monsoonstory_billiards-forge-1.20.1' }
+apply from: '../gradle/licenses.gradle'
+java { toolchain.languageVersion = JavaLanguageVersion.of(17); withSourcesJar() }
+repositories { mavenCentral(); maven { url = 'https://repo.spongepowered.org/repository/maven-public/' } }
+sourceSets.main.java.srcDir '../common/src/main/java'
+sourceSets.main.resources.srcDir '../common/src/main/resources'
+sourceSets { verification { compileClasspath += main.compileClasspath + main.output; runtimeClasspath += main.runtimeClasspath + main.output } }
+legacyForge {
+    enable { forgeVersion = '1.20.1-47.4.28'; disableRecompilation = true }
+    runs {
+        client { client() }
+        server { server(); programArgument '--nogui' }
+        gameTestServer { type = 'gameTestServer'; systemProperty 'forge.enabledGameTestNamespaces','monsoonstory_billiards' }
+        serverSmoke { server(); gameDirectory=file('run/smoke-server'); systemProperty 'billiards.smokeServer','true'; programArgument '--nogui' }
+        clientSmoke { client(); gameDirectory=file('run/smoke-client'); systemProperty 'billiards.smokeClient','true'; programArguments.addAll '--username','ForgeBilliardsQA','--uuid','00000000000000000000000000000079','--accessToken','0' }
+    }
+    mods {
+        monsoonstory_billiards { sourceSet sourceSets.main }
+        billiards_verification { sourceSet sourceSets.verification }
+    }
+}
+dependencies { annotationProcessor 'org.spongepowered:mixin:0.8.5:processor' }
+mixin { add sourceSets.main, 'monsoonstory_billiards.refmap.json'; config 'monsoonstory_billiards.mixins.json' }
+tasks.withType(JavaCompile).configureEach { options.encoding='UTF-8'; options.release=17 }
+processResources { inputs.property('version',project.version); filesMatching('META-INF/mods.toml') { expand(version:project.version) } }
+jar { manifest.attributes('MixinConfigs':'monsoonstory_billiards.mixins.json') }
+['verifyLogic':'LogicVerification','verifyPrediction':'PredictionLogic','verifyPower':'PowerLogic'].each { name,main ->
+    tasks.register(name,JavaExec) { dependsOn verificationClasses; classpath=sourceSets.verification.runtimeClasspath; mainClass='dev.monsoonstory.billiards.verification.'+main }
+}
+
+tasks.register('verificationJar', Jar) {
+    dependsOn verificationClasses
+    archiveClassifier = 'verification'
+    from sourceSets.verification.output
+}
+obfuscation {
+    reobfuscate(tasks.named('verificationJar'), sourceSets.main) {
+        libraries.from(sourceSets.main.output)
+    }
+}
+

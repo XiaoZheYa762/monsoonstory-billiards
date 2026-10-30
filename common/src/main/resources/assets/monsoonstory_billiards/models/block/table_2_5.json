@@ -1,0 +1,237 @@
+{
+  "ambientocclusion": true,
+  "textures": {
+    "felt": "monsoonstory_billiards:block/felt",
+    "wood": "monsoonstory_billiards:block/walnut",
+    "gold": "monsoonstory_billiards:block/brass",
+    "black": "minecraft:block/black_concrete",
+    "leather": "monsoonstory_billiards:block/leather",
+    "particle": "monsoonstory_billiards:block/walnut"
+  },
+  "elements": [
+    {
+      "from": [
+        0,
+        10.56,
+        0
+      ],
+      "to": [
+        16,
+        12.8,
+        9.5
+      ],
+      "faces": {
+        "up": {
+          "texture": "#felt"
+        },
+        "down": {
+          "texture": "#felt"
+        },
+        "north": {
+          "texture": "#felt"
+        },
+        "south": {
+          "texture": "#felt"
+        },
+        "east": {
+          "texture": "#felt"
+        },
+        "west": {
+          "texture": "#felt"
+        }
+      }
+    },
+    {
+      "from": [
+        0,
+        6.4,
+        5.5
+      ],
+      "to": [
+        16,
+        9.92,
+        13.0
+      ],
+      "faces": {
+        "up": {
+          "texture": "#wood"
+        },
+        "down": {
+          "texture": "#wood"
+        },
+        "north": {
+          "texture": "#wood"
+        },
+        "south": {
+          "texture": "#wood"
+        },
+        "east": {
+          "texture": "#wood"
+        },
+        "west": {
+          "texture": "#wood"
+        }
+      }
+    },
+    {
+      "from": [
+        0,
+        9.12,
+        9.5
+      ],
+      "to": [
+        16,
+        13.12,
+        16.0
+      ],
+      "faces": {
+        "up": {
+          "texture": "#wood"
+        },
+        "down": {
+          "texture": "#wood"
+        },
+        "north": {
+          "texture": "#wood"
+        },
+        "south": {
+          "texture": "#wood"
+        },
+        "east": {
+          "texture": "#wood"
+        },
+        "west": {
+          "texture": "#wood"
+        }
+      }
+    },
+    {
+      "from": [
+        0,
+        13.12,
+        9.5
+      ],
+      "to": [
+        16,
+        13.6,
+        16.0
+      ],
+      "faces": {
+        "up": {
+          "texture": "#gold"
+        },
+        "down": {
+          "texture": "#gold"
+        },
+        "north": {
+          "texture": "#gold"
+        },
+        "south": {
+          "texture": "#gold"
+        },
+        "east": {
+          "texture": "#gold"
+        },
+        "west": {
+          "texture": "#gold"
+        }
+      }
+    },
+    {
+      "from": [
+        0,
+        13.6,
+        9.5
+      ],
+      "to": [
+        16,
+        15.04,
+        16.0
+      ],
+      "faces": {
+        "up": {
+          "texture": "#wood"
+        },
+        "down": {
+          "texture": "#wood"
+        },
+        "north": {
+          "texture": "#wood"
+        },
+        "south": {
+          "texture": "#wood"
+        },
+        "east": {
+          "texture": "#wood"
+        },
+        "west": {
+          "texture": "#wood"
+        }
+      }
+    },
+    {
+      "from": [
+        0,
+        12.0,
+        3.25
+      ],
+      "to": [
+        16,
+        15.36,
+        9.5
+      ],
+      "faces": {
+        "up": {
+          "texture": "#felt"
+        },
+        "down": {
+          "texture": "#felt"
+        },
+        "north": {
+          "texture": "#felt"
+        },
+        "south": {
+          "texture": "#felt"
+        },
+        "east": {
+          "texture": "#felt"
+        },
+        "west": {
+          "texture": "#felt"
+        }
+      }
+    },
+    {
+      "from": [
+        0,
+        15.072,
+        12.4
+      ],
+      "to": [
+        0.72,
+        15.2,
+        13.84
+      ],
+      "faces": {
+        "up": {
+          "texture": "#gold"
+        },
+        "down": {
+          "texture": "#gold"
+        },
+        "north": {
+          "texture": "#gold"
+        },
+        "south": {
+          "texture": "#gold"
+        },
+        "east": {
+          "texture": "#gold"
+        },
+        "west": {
+          "texture": "#gold"
+        }
+      }
+    }
+  ]
+}

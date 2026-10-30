@@ -1,0 +1,336 @@
+{
+  "textures": {
+    "black": "monsoonstory_billiards:room/black",
+    "lamp_wood": "monsoonstory_billiards:room/lamp_wood",
+    "lamp_cream": "monsoonstory_billiards:room/lamp_cream",
+    "lamp_brass": "monsoonstory_billiards:room/lamp_brass",
+    "lamp_banner": "monsoonstory_billiards:room/lamp_banner",
+    "lamp_title": "monsoonstory_billiards:room/lamp_title",
+    "particle": "monsoonstory_billiards:room/black"
+  },
+  "elements": [
+    {
+      "name": "Inset housing left",
+      "from": [
+        0,
+        7,
+        0
+      ],
+      "to": [
+        16,
+        8,
+        14
+      ],
+      "faces": {
+        "south": {
+          "uv": [
+            3.6721311475409837,
+            0.0,
+            7.868852459016393,
+            16.0
+          ],
+          "texture": "#black"
+        },
+        "up": {
+          "uv": [
+            3.6721311475409837,
+            8.0,
+            7.868852459016393,
+            16.0
+          ],
+          "texture": "#black"
+        },
+        "down": {
+          "uv": [
+            3.6721311475409837,
+            8.0,
+            7.868852459016393,
+            16.0
+          ],
+          "texture": "#black"
+        }
+      }
+    },
+    {
+      "name": "Hanger left",
+      "from": [
+        14,
+        8,
+        0
+      ],
+      "to": [
+        16,
+        12,
+        1
+      ],
+      "faces": {
+        "east": {
+          "uv": [
+            0.0,
+            0.0,
+            8.0,
+            16.0
+          ],
+          "texture": "#black"
+        },
+        "south": {
+          "uv": [
+            0.0,
+            0.0,
+            16.0,
+            16.0
+          ],
+          "texture": "#black"
+        },
+        "west": {
+          "uv": [
+            8.0,
+            0.0,
+            16.0,
+            16.0
+          ],
+          "texture": "#black"
+        },
+        "up": {
+          "uv": [
+            0.0,
+            8.0,
+            16.0,
+            16.0
+          ],
+          "texture": "#black"
+        },
+        "down": {
+          "uv": [
+            0.0,
+            8.0,
+            16.0,
+            16.0
+          ],
+          "texture": "#black"
+        }
+      }
+    },
+    {
+      "name": "Balanced suspension beam",
+      "from": [
+        13,
+        12,
+        0
+      ],
+      "to": [
+        16,
+        14,
+        1
+      ],
+      "faces": {
+        "south": {
+          "uv": [
+            0.0,
+            0.0,
+            0.7058823529411765,
+            16.0
+          ],
+          "texture": "#black"
+        },
+        "west": {
+          "uv": [
+            8.0,
+            0.0,
+            16.0,
+            16.0
+          ],
+          "texture": "#black"
+        },
+        "up": {
+          "uv": [
+            0.0,
+            8.0,
+            0.7058823529411765,
+            16.0
+          ],
+          "texture": "#black"
+        },
+        "down": {
+          "uv": [
+            0.0,
+            8.0,
+            0.7058823529411765,
+            16.0
+          ],
+          "texture": "#black"
+        }
+      }
+    },
+    {
+      "name": "Rear walnut frame",
+      "from": [
+        0,
+        3.2,
+        14
+      ],
+      "to": [
+        16,
+        8,
+        15.8
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            12.0,
+            0.0,
+            14.0,
+            16.0
+          ],
+          "texture": "#lamp_wood"
+        },
+        "south": {
+          "uv": [
+            2.0,
+            0.0,
+            4.0,
+            16.0
+          ],
+          "texture": "#lamp_wood"
+        },
+        "up": {
+          "uv": [
+            2.0,
+            0.0,
+            4.0,
+            16.0
+          ],
+          "texture": "#lamp_wood"
+        },
+        "down": {
+          "uv": [
+            2.0,
+            0.0,
+            4.0,
+            16.0
+          ],
+          "texture": "#lamp_wood"
+        }
+      }
+    },
+    {
+      "name": "Warm diffuser left",
+      "from": [
+        0,
+        3.3,
+        0
+      ],
+      "to": [
+        16,
+        4,
+        14
+      ],
+      "faces": {
+        "south": {
+          "uv": [
+            3.6721311475409837,
+            0.0,
+            7.868852459016393,
+            16.0
+          ],
+          "texture": "#lamp_cream"
+        },
+        "up": {
+          "uv": [
+            3.6721311475409837,
+            8.0,
+            7.868852459016393,
+            16.0
+          ],
+          "texture": "#lamp_cream"
+        },
+        "down": {
+          "uv": [
+            3.6721311475409837,
+            8.0,
+            7.868852459016393,
+            16.0
+          ],
+          "texture": "#lamp_cream"
+        }
+      },
+      "shade": false
+    },
+    {
+      "name": "Rear brass lip",
+      "from": [
+        0,
+        2.8,
+        14
+      ],
+      "to": [
+        16,
+        3.2,
+        16
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            12.0,
+            0.0,
+            14.0,
+            16.0
+          ],
+          "texture": "#lamp_brass"
+        },
+        "south": {
+          "uv": [
+            2.0,
+            0.0,
+            4.0,
+            16.0
+          ],
+          "texture": "#lamp_brass"
+        },
+        "up": {
+          "uv": [
+            2.0,
+            0.0,
+            4.0,
+            16.0
+          ],
+          "texture": "#lamp_brass"
+        },
+        "down": {
+          "uv": [
+            2.0,
+            0.0,
+            4.0,
+            16.0
+          ],
+          "texture": "#lamp_brass"
+        }
+      }
+    },
+    {
+      "name": "Rear title band",
+      "from": [
+        0,
+        3.5,
+        15.879999999999999
+      ],
+      "to": [
+        16,
+        7.5,
+        15.899999999999999
+      ],
+      "faces": {
+        "south": {
+          "uv": [
+            1.8064516129032258,
+            0.0,
+            3.870967741935484,
+            16.0
+          ],
+          "texture": "#lamp_banner"
+        }
+      },
+      "shade": false
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+modLoader="javafml"
+loaderVersion="[47,)"
+license="Jeefeng Source License v1.0; original assets separately licensed"
+issueTrackerURL="https://github.com/XiaoZheYa762/monsoonstory-billiards/issues"
+[[mods]]
+modId="monsoonstory_billiards"
+version="${version}"
+displayName="Monsoon Story: Billiards"
+displayURL="https://github.com/XiaoZheYa762/monsoonstory-billiards"
+authors="季风物语"
+description='''World-space eight-ball and nine-ball billiards.'''
+[[dependencies.monsoonstory_billiards]]
+modId="forge"
+mandatory=true
+versionRange="[47.4.28,)"
+ordering="NONE"
+side="BOTH"
+[[dependencies.monsoonstory_billiards]]
+modId="minecraft"
+mandatory=true
+versionRange="[1.20.1]"
+ordering="NONE"
+side="BOTH"

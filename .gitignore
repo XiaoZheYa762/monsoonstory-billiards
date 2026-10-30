@@ -1,0 +1,45 @@
+# Runtime data and build outputs, including each platform subproject.
+**/.gradle/
+**/.tools/
+**/build/
+**/out/
+**/run/
+**/runs/
+**/logs/
+**/crash-reports/
+**/saves/
+**/world/
+**/verification-world/
+**/monsoonstory_billiards/music/
+**/cache/
+/dist/
+**/__pycache__/
+*.py[cod]
+*.log
+*.log.gz
+*.hprof
+
+# Local editor and account configuration.
+**/.idea/
+**/.vscode/
+*.iml
+**/.env
+**/.env.*
+**/local.properties
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+*.keystore
+**/music-library/
+**/user-music/
+**/server.properties
+**/eula.txt
+**/ops.json
+**/whitelist.json
+**/usercache.json
+**/banned-players.json
+**/banned-ips.json
+
+# Gradle wrapper JARs are intentionally tracked.

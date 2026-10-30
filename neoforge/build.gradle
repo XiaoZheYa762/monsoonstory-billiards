@@ -1,0 +1,55 @@
+plugins {
+    id 'java-library'
+    id 'net.neoforged.moddev' version '2.0.148'
+}
+version = project.mod_version
+group = 'dev.monsoonstory.billiards'
+base { archivesName = 'monsoonstory_billiards-neoforge-1.21.1' }
+apply from: '../gradle/licenses.gradle'
+java { toolchain.languageVersion = JavaLanguageVersion.of(21); withSourcesJar() }
+repositories { mavenCentral() }
+sourceSets.main.java.srcDir '../common/src/main/java'
+apply from: '../gradle/public-data.gradle'
+sourceSets {
+    verification {
+        compileClasspath += main.compileClasspath + main.output
+        runtimeClasspath += main.runtimeClasspath + main.output
+    }
+}
+neoForge {
+    version = '21.1.264'
+    runs {
+        client { client() }
+        server { server(); programArgument '--nogui' }
+        gameTestServer { type = 'gameTestServer'; systemProperty 'neoforge.enabledGameTestNamespaces','monsoonstory_billiards' }
+        serverSmoke {
+            server()
+            gameDirectory=file('run/smoke-server')
+            systemProperty 'billiards.smokeServer','true'
+            programArgument '--nogui'
+        }
+        clientSmoke {
+            client()
+            gameDirectory=file('run/smoke-client')
+            systemProperty 'billiards.smokeClient','true'
+            programArguments.addAll '--username','NeoBilliardsQA','--uuid','00000000000000000000000000000078','--accessToken','0'
+        }
+    }
+    mods {
+        monsoonstory_billiards { sourceSet sourceSets.main }
+        billiards_verification { sourceSet sourceSets.verification }
+    }
+}
+tasks.withType(JavaCompile).configureEach { options.encoding='UTF-8'; options.release=21 }
+processResources {
+    inputs.property('version', project.version)
+    filesMatching('META-INF/neoforge.mods.toml') { expand(version:project.version) }
+}
+tasks.named('sourcesJar') { dependsOn 'preparePublicData' }
+['verifyLogic':'LogicVerification','verifyPrediction':'PredictionLogic','verifyPower':'PowerLogic'].each { name,main ->
+    tasks.register(name,JavaExec) {
+        dependsOn verificationClasses
+        classpath=sourceSets.verification.runtimeClasspath
+        mainClass='dev.monsoonstory.billiards.verification.'+main
+    }
+}

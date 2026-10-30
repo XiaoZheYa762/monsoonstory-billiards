@@ -1,0 +1,45 @@
+{
+  "ambientocclusion": true,
+  "textures": {
+    "felt": "monsoonstory_billiards:block/felt",
+    "wood": "monsoonstory_billiards:block/walnut",
+    "gold": "monsoonstory_billiards:block/brass",
+    "black": "minecraft:block/black_concrete",
+    "leather": "monsoonstory_billiards:block/leather",
+    "particle": "monsoonstory_billiards:block/walnut"
+  },
+  "elements": [
+    {
+      "from": [
+        0,
+        10.56,
+        0
+      ],
+      "to": [
+        16,
+        12.8,
+        16
+      ],
+      "faces": {
+        "up": {
+          "texture": "#felt"
+        },
+        "down": {
+          "texture": "#felt"
+        },
+        "north": {
+          "texture": "#felt"
+        },
+        "south": {
+          "texture": "#felt"
+        },
+        "east": {
+          "texture": "#felt"
+        },
+        "west": {
+          "texture": "#felt"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "length": 10,
+  "width": 6,
+  "surface": 0.8,
+  "rail_inset": 0.8,
+  "ball_radius": 0.16,
+  "pocket_radius": 0.3,
+  "pocket_setback": 0.08,
+  "corner_mouth": 0.375,
+  "side_mouth": 0.36,
+  "table_corner_radius": 0.5,
+  "jaw_radius": 0.07
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "monsoonstory_billiards:block/table_8_0",
+  "textures": {
+    "felt": "monsoonstory_billiards:block/felt_pink",
+    "wood": "monsoonstory_billiards:block/wood_ivory",
+    "particle": "monsoonstory_billiards:block/wood_ivory"
+  }
+}

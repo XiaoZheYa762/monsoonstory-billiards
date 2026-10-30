@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "item": "monsoonstory_billiards:souvenir_ball_1"
+    },
+    "title": {
+      "translate": "advancement.monsoonstory_billiards.first_pot"
+    },
+    "description": {
+      "translate": "advancement.monsoonstory_billiards.first_pot.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "criteria": {
+    "done": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "done"
+    ]
+  ],
+  "parent": "monsoonstory_billiards:root"
+}

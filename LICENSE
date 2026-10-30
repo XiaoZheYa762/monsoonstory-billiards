@@ -1,0 +1,104 @@
+Jeefeng Source License
+季风物语源码共享授权协议
+Version 1.0
+
+Copyright (c) 2026 季风物语 (Monsoon Story / Jeefeng Story).
+All rights reserved except as expressly granted below.
+
+This license applies to the original software source code, build scripts,
+tools and documentation in this repository, excluding creative assets and
+third-party components that are separately licensed. It is a custom
+source-available license, not an OSI-approved open-source license.
+
+1. Permission
+
+The copyright holder grants everyone permission to:
+
+- Access and view the source code.
+- Download and use the software for personal and non-commercial purposes.
+- Study and modify the source code.
+- Distribute original or modified versions, subject to this license and the
+  separate licenses of any included assets or third-party components.
+
+2. Share-Alike Requirement
+
+If you distribute or publicly make available a modified version, you must:
+
+- Publish its complete corresponding source code, including your
+  modifications and the build scripts needed to build that version, and
+  provide recipients a freely accessible copy or download link.
+- License that modified source code under this same Jeefeng Source License
+  Version 1.0, except for separately licensed third-party components.
+- Retain all original copyright notices and attribution.
+- Clearly identify your modifications and distinguish your version from the
+  original project.
+- Provide recipients with a copy of this license.
+
+You may not distribute a modified version in binary-only or closed-source
+form. Private modifications that are not distributed or publicly made
+available do not need to be published. Operating a server without distributing
+the software does not by itself require publication of private modifications.
+Separately licensed assets are excluded from the source-code grant; obtain
+permission or replace them before distributing a version that includes them.
+When distributing an unmodified copy of the software, retain this license
+and the applicable copyright and third-party notices.
+
+3. Commercial Restrictions
+
+Commercial use, sale or commercial redistribution of this software,
+including modified versions, requires prior written permission from the
+applicable copyright holder(s). Activities requiring authorization include:
+
+- Selling the original or modified mod.
+- Charging users specifically for downloading or obtaining the mod.
+- Selling the mod as part of a paid software package or product.
+- Commercially licensing or reselling the source code.
+
+Commercial authorization must be obtained separately in writing. No such
+authorization is implied by public repository access or by this license.
+
+4. Attribution and Original Authorship
+
+You must not:
+
+- Claim to be the original author of this project.
+- Remove or falsify original copyright notices.
+- Misrepresent a modified version as the official original release.
+- Use the Monsoon Story / Jeefeng Story / 季风物语 name, logo or other
+  branding to imply official endorsement without permission.
+
+5. Assets and Third-Party Materials
+
+This license does not grant rights to separately licensed artwork, textures,
+models, sounds, logos, fonts or other creative assets. Original project
+assets are governed by ASSET-LICENSE.md. Third-party materials remain subject
+to their own terms; see THIRD_PARTY_NOTICES.md and gradle/LICENSE-GRADLE.txt.
+No ownership or license rights in third-party materials are claimed here.
+Rights independently granted by a rightsholder under a hosting service's
+accepted terms are not limited by this license.
+
+6. No Warranty
+
+This software is provided "AS IS", without warranties of any kind, express
+or implied, including but not limited to warranties of merchantability,
+fitness for a particular purpose and non-infringement.
+
+The copyright holder shall not be liable for any claim, damages or other
+liability arising from the use or distribution of this software, to the
+extent permitted by applicable law.
+
+7. Termination
+
+Any violation of this license terminates the permissions granted under it,
+subject to applicable law.
+
+8. Contact
+
+For commercial licensing, asset permissions or other licensing inquiries,
+contact 季风物语 through the official project repository's Issues page.
+A request alone does not constitute permission; keep the rightsholder's
+explicit written authorization.
+
+This license accompanies releases beginning with 1.1.1. It does not revoke
+permissions already granted in copies previously distributed under MIT or
+another license. See NOTICE for the licensing transition.

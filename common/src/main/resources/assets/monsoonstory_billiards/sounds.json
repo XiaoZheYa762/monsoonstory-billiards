@@ -1,0 +1,138 @@
+{
+  "ball": {
+    "subtitle": "subtitles.monsoonstory_billiards.ball",
+    "sounds": [
+      {
+        "name": "monsoonstory_billiards:ball_1",
+        "stream": false
+      },
+      {
+        "name": "monsoonstory_billiards:ball_2",
+        "stream": false
+      },
+      {
+        "name": "monsoonstory_billiards:ball_3",
+        "stream": false
+      }
+    ]
+  },
+  "cushion": {
+    "subtitle": "subtitles.monsoonstory_billiards.cushion",
+    "sounds": [
+      {
+        "name": "monsoonstory_billiards:cushion_1",
+        "stream": false
+      },
+      {
+        "name": "monsoonstory_billiards:cushion_2",
+        "stream": false
+      }
+    ]
+  },
+  "pocket": {
+    "subtitle": "subtitles.monsoonstory_billiards.pocket",
+    "sounds": [
+      {
+        "name": "monsoonstory_billiards:pocket_1",
+        "stream": false
+      },
+      {
+        "name": "monsoonstory_billiards:pocket_2",
+        "stream": false
+      }
+    ]
+  },
+  "cue": {
+    "subtitle": "subtitles.monsoonstory_billiards.cue",
+    "sounds": [
+      {
+        "name": "monsoonstory_billiards:cue_1",
+        "stream": false
+      },
+      {
+        "name": "monsoonstory_billiards:cue_2",
+        "stream": false
+      }
+    ]
+  },
+  "place": {
+    "subtitle": "subtitles.monsoonstory_billiards.place",
+    "sounds": [
+      {
+        "name": "monsoonstory_billiards:place",
+        "stream": false
+      }
+    ]
+  },
+  "pickup": {
+    "subtitle": "subtitles.monsoonstory_billiards.pickup",
+    "sounds": [
+      {
+        "name": "monsoonstory_billiards:pickup",
+        "stream": false
+      }
+    ]
+  },
+  "rack": {
+    "subtitle": "subtitles.monsoonstory_billiards.rack",
+    "sounds": [
+      {
+        "name": "monsoonstory_billiards:rack",
+        "stream": false
+      }
+    ]
+  },
+  "start": {
+    "subtitle": "subtitles.monsoonstory_billiards.start",
+    "sounds": [
+      {
+        "name": "monsoonstory_billiards:start",
+        "stream": false
+      }
+    ]
+  },
+  "turn": {
+    "subtitle": "subtitles.monsoonstory_billiards.turn",
+    "sounds": [
+      {
+        "name": "monsoonstory_billiards:turn",
+        "stream": false
+      }
+    ]
+  },
+  "foul": {
+    "subtitle": "subtitles.monsoonstory_billiards.foul",
+    "sounds": [
+      {
+        "name": "monsoonstory_billiards:foul",
+        "stream": false
+      }
+    ]
+  },
+  "win": {
+    "subtitle": "subtitles.monsoonstory_billiards.win",
+    "sounds": [
+      {
+        "name": "monsoonstory_billiards:win",
+        "stream": false
+      }
+    ]
+  },
+  "roll": {
+    "subtitle": "subtitles.monsoonstory_billiards.roll",
+    "sounds": [
+      {
+        "name": "monsoonstory_billiards:roll",
+        "stream": false
+      }
+    ]
+  },
+  "user_music": {
+    "sounds": [
+      {
+        "name": "monsoonstory_billiards:user_music",
+        "stream": true
+      }
+    ]
+  }
+}

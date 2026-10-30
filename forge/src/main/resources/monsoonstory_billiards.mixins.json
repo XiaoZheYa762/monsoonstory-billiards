@@ -1,0 +1,30 @@
+{
+  "required": true,
+  "refmap": "monsoonstory_billiards.refmap.json",
+  "package": "dev.monsoonstory.billiards.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "PlayerDropMixin",
+    "CueAttackMixin"
+  ],
+  "client": [
+    "ClientMessageThreadMixin",
+    "CameraMixin",
+    "MouseMixin",
+    "HeldCueMixin",
+    "HeldCueFeatureMixin",
+    "PlayerCuePoseMixin",
+    "PlayerCueFacingMixin",
+    "AimHudMixin",
+    "KeyBindingAccess",
+    "ScopedKeyMixin",
+    "TableInputMixin",
+    "TableInteractionMixin",
+    "TableMusicMixin",
+    "GameRendererAccess"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "minVersion": "0.8.5"
+}

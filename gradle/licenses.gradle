@@ -1,0 +1,6 @@
+// Keep the installable, development and sources JARs' legal files together.
+def legalFiles = files('../LICENSE', '../ASSET-LICENSE.md', '../ASSETS_LICENSE.md',
+        '../NOTICE', '../THIRD_PARTY_NOTICES.md')
+tasks.withType(Jar).configureEach {
+    from(legalFiles)
+}

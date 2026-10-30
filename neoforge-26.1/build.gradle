@@ -1,0 +1,69 @@
+plugins {
+    id 'java-library'
+    id 'net.neoforged.moddev' version '2.0.148'
+}
+version = project.mod_version
+group = 'dev.monsoonstory.billiards'
+base { archivesName = 'monsoonstory_billiards-neoforge-26.1' }
+apply from: '../gradle/licenses.gradle'
+java { toolchain.languageVersion = JavaLanguageVersion.of(25); withSourcesJar() }
+repositories { mavenCentral() }
+sourceSets.main.java.srcDir '../common/src/main/java'
+apply from: '../gradle/public-data-26.1.gradle'
+sourceSets {
+    verification {
+        compileClasspath += main.compileClasspath + main.output
+        runtimeClasspath += main.runtimeClasspath + main.output
+    }
+}
+neoForge {
+    version = '26.1.0.19-beta'
+    runs {
+        client { client() }
+        server { server(); programArgument '--nogui' }
+        gameTestServer { type = 'gameTestServer'; gameDirectory=file('run/gametest-26'); systemProperty 'neoforge.enabledGameTestNamespaces','monsoonstory_billiards' }
+        serverSmoke {
+            server()
+            gameDirectory=file('run/smoke-server')
+            systemProperty 'billiards.smokeServer','true'
+            programArgument '--nogui'
+        }
+        clientSmoke {
+            client()
+            gameDirectory=file('run/smoke-client')
+            systemProperty 'billiards.smokeClient','true'
+            programArguments.addAll '--username','NeoBilliardsQA','--uuid','00000000000000000000000000000078','--accessToken','0'
+        }
+    }
+    mods {
+        monsoonstory_billiards { sourceSet sourceSets.main }
+        billiards_verification { sourceSet sourceSets.verification }
+    }
+}
+tasks.withType(JavaCompile).configureEach { options.encoding='UTF-8'; options.release=25 }
+processResources {
+    inputs.property('version', project.version)
+    filesMatching('META-INF/neoforge.mods.toml') { expand(version:project.version) }
+}
+tasks.named('sourcesJar') { dependsOn 'preparePublicData' }
+['verifyLogic':'LogicVerification','verifyPrediction':'PredictionLogic','verifyPower':'PowerLogic'].each { name,main ->
+    tasks.register(name,JavaExec) {
+        dependsOn verificationClasses
+        classpath=sourceSets.verification.runtimeClasspath
+        mainClass='dev.monsoonstory.billiards.verification.'+main
+    }
+}
+
+
+tasks.withType(JavaCompile).configureEach { options.compilerArgs += ['-Xmaxerrs', '1000'] }
+
+
+tasks.register('exportSmokeClasspath') {
+    dependsOn 'prepareServerSmokeRun', 'prepareClientSmokeRun', 'verificationClasses', 'jar'
+    doLast {
+        ['serverSmoke','clientSmoke'].each { name ->
+            def cp=tasks.named('run'+name.capitalize()).get().classpathProvider.files.findAll { !it.toPath().toAbsolutePath().normalize().startsWith(layout.buildDirectory.get().asFile.toPath().toAbsolutePath().normalize().resolve('classes')) && !it.toPath().toAbsolutePath().normalize().startsWith(layout.buildDirectory.get().asFile.toPath().toAbsolutePath().normalize().resolve('resources')) }.collect { it.absolutePath }.join(File.pathSeparator)
+            file("build/moddev/${name}RunClasspath.txt").setText('-classpath\n"'+cp.replace('\\','\\\\')+'"\n', System.getProperty('native.encoding', 'UTF-8'))
+        }
+    }
+}

@@ -1,0 +1,7 @@
+modLoader="javafml"
+loaderVersion="[47,)"
+license="Jeefeng Source License v1.0"
+[[mods]]
+modId="billiards_verification"
+version="1.0.0"
+displayName="Billiards Development Verification"

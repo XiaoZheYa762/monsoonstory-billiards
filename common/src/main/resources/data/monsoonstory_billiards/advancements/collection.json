@@ -1,0 +1,118 @@
+{
+  "display": {
+    "icon": {
+      "item": "monsoonstory_billiards:souvenir_ball_0"
+    },
+    "title": {
+      "translate": "advancement.monsoonstory_billiards.collection"
+    },
+    "description": {
+      "translate": "advancement.monsoonstory_billiards.collection.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "criteria": {
+    "ball_0": {
+      "trigger": "minecraft:impossible"
+    },
+    "ball_1": {
+      "trigger": "minecraft:impossible"
+    },
+    "ball_2": {
+      "trigger": "minecraft:impossible"
+    },
+    "ball_3": {
+      "trigger": "minecraft:impossible"
+    },
+    "ball_4": {
+      "trigger": "minecraft:impossible"
+    },
+    "ball_5": {
+      "trigger": "minecraft:impossible"
+    },
+    "ball_6": {
+      "trigger": "minecraft:impossible"
+    },
+    "ball_7": {
+      "trigger": "minecraft:impossible"
+    },
+    "ball_8": {
+      "trigger": "minecraft:impossible"
+    },
+    "ball_9": {
+      "trigger": "minecraft:impossible"
+    },
+    "ball_10": {
+      "trigger": "minecraft:impossible"
+    },
+    "ball_11": {
+      "trigger": "minecraft:impossible"
+    },
+    "ball_12": {
+      "trigger": "minecraft:impossible"
+    },
+    "ball_13": {
+      "trigger": "minecraft:impossible"
+    },
+    "ball_14": {
+      "trigger": "minecraft:impossible"
+    },
+    "ball_15": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "ball_0"
+    ],
+    [
+      "ball_1"
+    ],
+    [
+      "ball_2"
+    ],
+    [
+      "ball_3"
+    ],
+    [
+      "ball_4"
+    ],
+    [
+      "ball_5"
+    ],
+    [
+      "ball_6"
+    ],
+    [
+      "ball_7"
+    ],
+    [
+      "ball_8"
+    ],
+    [
+      "ball_9"
+    ],
+    [
+      "ball_10"
+    ],
+    [
+      "ball_11"
+    ],
+    [
+      "ball_12"
+    ],
+    [
+      "ball_13"
+    ],
+    [
+      "ball_14"
+    ],
+    [
+      "ball_15"
+    ]
+  ],
+  "parent": "monsoonstory_billiards:black_win"
+}

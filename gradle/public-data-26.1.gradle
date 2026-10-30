@@ -1,0 +1,51 @@
+import groovy.json.JsonSlurper
+import groovy.json.JsonOutput
+
+// Keep the committed 1.20.1 assets as the source of truth. All conversion stays in build/.
+apply from: '../gradle/public-data.gradle'
+
+tasks.named('preparePublicData') {
+    inputs.property('gameDataVersion', '26.1')
+    doLast {
+        def destination = layout.buildDirectory.dir('generated/public-data').get().asFile
+        def writeJson = { File target, value ->
+            target.parentFile.mkdirs()
+            target.setText(JsonOutput.prettyPrint(JsonOutput.toJson(value)) + '\n', 'UTF-8')
+        }
+        fileTree(destination).matching { include 'data/*/recipe/*.json' }.each { recipe ->
+            def value = new JsonSlurper().parse(recipe)
+            if (value.key instanceof Map) {
+                value.key = value.key.collectEntries { symbol, ingredient ->
+                    if (!(ingredient instanceof Map) || !(ingredient.item || ingredient.tag)) {
+                        throw new GradleException('Unsupported 26.1 ingredient: ' + recipe)
+                    }
+                    [(symbol): ingredient.item ?: '#' + ingredient.tag]
+                }
+            }
+            writeJson(recipe, value)
+        }
+        fileTree(destination).matching { include 'data/*/advancement/**/*.json' }.each { advancement ->
+            def value = new JsonSlurper().parse(advancement)
+            if (value.display?.background) {
+                value.display.background = value.display.background.replace(':textures/', ':').replaceFirst(/\.png$/, '')
+            }
+            writeJson(advancement, value)
+        }
+        fileTree(destination).matching { include 'assets/monsoonstory_billiards/lang/*.json' }.each { language ->
+            def value = new JsonSlurper().parse(language)
+            value['key.category.monsoonstory_billiards.billiards'] = value['key.categories.monsoonstory_billiards']
+            writeJson(language, value)
+        }
+
+        // 1.21.4+ uses an item definition in addition to the geometry model.
+        // 26.1 resolves sprite IDs across atlases globally. Room/block materials must
+        // stay in the blocks atlas; duplicating them in items makes world models invalid.
+        fileTree(destination).matching { include 'assets/*/models/item/*.json' }.each { model ->
+            def relative = destination.toPath().relativize(model.toPath()).toString().replace('\\', '/')
+            def namespace = relative.split('/')[1]
+            def name = model.name.substring(0, model.name.length() - 5)
+            writeJson(new File(destination, "assets/${namespace}/items/${name}.json"),
+                    [model: [type: 'minecraft:model', model: "${namespace}:item/${name}"]])
+        }
+    }
+}

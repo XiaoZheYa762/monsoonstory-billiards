@@ -1,0 +1,24 @@
+{
+  "required": true,
+  "package": "dev.monsoonstory.billiards.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "client": [
+    "ClientMessageThreadMixin",
+    "CameraMixin",
+    "MouseMixin",
+    "HeldCueMixin",
+    "HeldCueFeatureMixin",
+    "PlayerCuePoseMixin",
+    "PlayerCueFacingMixin",
+    "AimHudMixin",
+    "KeyBindingAccess",
+    "ScopedKeyMixin",
+    "TableInputMixin",
+    "TableInteractionMixin",
+    "TableMusicMixin",
+    "GameRendererAccess"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

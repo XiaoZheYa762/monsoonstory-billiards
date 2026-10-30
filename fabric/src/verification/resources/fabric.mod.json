@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "id": "billiards_verification",
+  "version": "1.0.0",
+  "name": "Billiards verification (development only)",
+  "environment": "*",
+  "entrypoints": {
+    "fabric-gametest": [
+      "dev.monsoonstory.billiards.PublicSafetyVerification"
+    ],
+    "main": [
+      "dev.monsoonstory.billiards.MultiplayerVerification"
+    ],
+    "client": [
+      "dev.monsoonstory.billiards.ClientVerification"
+    ]
+  },
+  "depends": {
+    "monsoonstory_billiards": "*",
+    "fabric-api": "*"
+  }
+}
