@@ -23,7 +23,21 @@ Better Combat is optional. Without it, ordinary cues still support vanilla left-
 
 Find the items in the **Monsoon Story: Billiards** creative tab, or craft them in survival. A table needs a flat, supported, clear **10 × 6** area. After placing it, right-click the table and choose practice or create a match. The match starts once a second player has joined and readied up.
 
-Hold a cue and right-click the table to aim. First release the right-click used to enter aiming, then hold right-click to charge and release to strike. Press `G` to toggle the aiming guide, `Alt` to adjust the cue-ball contact point, `R` to center it, `Shift` for fine aiming, `O` for settings, `V` to change the overview camera position, and `Esc` to cancel aiming. Key bindings can be changed in Minecraft's controls settings.
+Hold a cue and right-click the table to aim. First release the right-click used to enter aiming, then hold right-click to charge and release to strike.
+
+Default controls:
+
+| Key | Action |
+|---|---|
+| <kbd>G</kbd> | Toggle the aiming guide |
+| <kbd>Alt</kbd> | Adjust the cue-ball contact point |
+| <kbd>R</kbd> | Center the cue-ball contact point |
+| <kbd>Shift</kbd> | Fine aiming |
+| <kbd>O</kbd> | Open settings |
+| <kbd>V</kbd> | Change the overview camera position |
+| <kbd>Esc</kbd> | Cancel aiming |
+
+Key bindings can be changed in Minecraft's controls settings.
 
 Eight-ball uses the casual house rules described in the interface, with a called pocket required for the black eight. In nine-ball, the cue ball must contact the lowest-numbered object ball on the table first. Snooker is not currently included. Any nearby player can reset a table; dismantling is managed by its placer and operators.
 
