@@ -6,7 +6,6 @@
 
 在 Minecraft 世界里游玩休闲八球、九球和单人练习，支持双人对局、旁观、三色球桌与普通球杆、击点旋转、瞄准预测、连续观球镜头及球房家具。
 
-模组 ID：`monsoonstory_billiards`；公开版版本：`1.1.1`；代码采用 [Jeefeng Source License v1.0](LICENSE)（源码可见）许可。
 
 ## 安装
 
@@ -19,11 +18,7 @@
 | NeoForge 1.21.1 | 21 | NeoForge 21.1.264 或更新的同游戏版本构建 |
 | NeoForge 26.1 | 25 | NeoForge 26.1.0.19-beta |
 
-26.1 安装包仅适配 **26.1**，不包含 26.1.1 / 26.1.2；对应的 NeoForge 本身为官方 Beta 构建。各安装包不支持跨游戏版本或跨加载器联机。
-
 Better Combat 为可选兼容。未安装时，普通球杆仍支持原版左键攻击和右键蓄力前戳。无需安装其他季风物语模组。
-
-公开版使用独立命名空间，不自动转换自用版的物品、球桌和对局存档。请保留原存档备份。
 
 ## 开始打球
 
@@ -49,20 +44,8 @@ Better Combat 为可选兼容。未安装时，普通球杆仍支持原版左键
 
 8 格内进入、10 格外退出并淡出；多桌同时播放时只收听其中一张附近球桌。下载完成后从共同播放进度开始，静音时停止音乐下载。歌曲选择会保存，服务器重启后暂停，等待管理员继续。
 
-默认单曲限制 20 MiB、10 分钟，曲库总量 1 GiB，总传输限速 1 MiB/s，服主可调整。音乐保存在世界目录下的 `monsoonstory_billiards/music`，客户端下载为本地缓存，不应上传到 GitHub，也不会被打进发行包。请只上传你有权向其他玩家分享的音乐。
+默认单曲限制 20 MiB、10 分钟，曲库总量 1 GiB，总传输限速 1 MiB/s，服主可调整。音乐保存在世界目录下的 `monsoonstory_billiards/music`，客户端下载为本地缓存。
 
-## 从源码构建
-
-旧版本构建使用 JDK 21，NeoForge 26.1 使用 JDK 25；Gradle 会按需获取其他 Java 工具链。在工程根目录执行：
-
-```powershell
-.\fabric\gradlew.bat -p fabric clean build
-.\forge\gradlew.bat -p forge clean build
-.\neoforge\gradlew.bat -p neoforge clean build
-.\neoforge-26.1\gradlew.bat -p neoforge-26.1 clean build
-```
-
-Fabric / Forge 1.20.1 均输出 Java 17 字节码。安装用 JAR 位于各自的 `build/libs`，不要把源码包、验证包或开发包当作玩家安装文件。编译不需要 Python 或 Blockbench。
 
 ## 许可与版权
 
@@ -70,6 +53,5 @@ Fabric / Forge 1.20.1 均输出 Java 17 字节码。安装用 JAR 位于各自�
 
 原创贴图、模型、GUI、图标等采用独立的 [素材许可](ASSET-LICENSE.md)，保留权利，仅明确允许个人非商业游戏使用和本地构建运行。提取复用、随修改版分发、随免费整合包重新打包也须另行取得书面许可；代码分支可以更换为有权分发的素材。第三方 CC0 录音及其衍生音效保持 CC0 授权。
 
-这是“源码可见”项目，不属于 OSI 标准开源许可。新方案从 `1.1.1` 随包提供；若旧副本已按 MIT 对外分发，旧副本已授予的权限不会因本次修改而收回。详见 [版权与授权变更声明](NOTICE)。
 
 更多信息：[源码许可](LICENSE)、[素材许可](ASSET-LICENSE.md)、[贡献说明](CONTRIBUTING.md)、[第三方声明](THIRD_PARTY_NOTICES.md)、[开发说明](AI_USAGE.md)、[更新记录](CHANGELOG.md)、[上传步骤](docs/PUBLISHING.zh-CN.md)、[验证记录](docs/VERIFICATION.md)。
